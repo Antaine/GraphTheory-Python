@@ -3,3 +3,5 @@ Converting Infix to Postfix not working.
 Create peek() method to retrieve latest value from the stack
   or find a built in method to do this.
 Add comments to if otherwise it may get confusing
+String concationation faster than using char lists. - Change Code to strings
+  Link - https://waymoot.org/home/python_string/
