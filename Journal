@@ -1,1 +1,5 @@
 Studying Project Requirements.
+Converting Infix to Postfix not working.
+Create peek() method to retrieve latest value from the stack
+  or find a built in method to do this.
+Add comments to if otherwise it may get confusing
