@@ -5,6 +5,11 @@ print(input1)
 inputList = list(input1)
 #inputList = list(input)
 print(inputList)
+stack = list()
+
+for temp in inputList:
+    stack.extend(temp)
+    print(stack)
 
 # for temp in inputList:   
 #     print(temp)
