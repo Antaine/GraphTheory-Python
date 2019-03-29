@@ -8,8 +8,15 @@ print(inputList)
 stack = list()
 
 for temp in inputList:
-    stack.extend(temp)
-    print(stack)
+    if temp in ['*','.','|']:
+        stack.extend(temp)
+        print("Special Operator: "+ temp)
+        
+    else:
+        stack.extend(temp)
+        print("Normal Character: "+ temp)
+
+print(stack)
 
 # for temp in inputList:   
 #     print(temp)
