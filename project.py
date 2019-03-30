@@ -1,8 +1,22 @@
 #Antaine Ó Conghaile - G00347577 
-import sys
-infix = input("Enter expression: ")
-print(infix)
 
+#Variables
+postfix = ""
+
+#State
+class node:
+    label = None
+    edge1 = None
+    edge2 = None
+
+#Definition
+class nfa:
+    initial = None
+    accept = None
+
+    def __init____(self,initial,accept):
+        self.initial = initial
+        self.accept = accept
 
 def convertToPostfix(infix):
     stack = ""
@@ -30,7 +44,6 @@ def convertToPostfix(infix):
             else:
                 print("Error")
         else:
-            print("Entered Normal Characters")
             postfix = postfix + temp
     #Make Sure List is Clear
     while stack:
@@ -39,6 +52,9 @@ def convertToPostfix(infix):
 
     return postfix
 
-print("PostFix: "+convertToPostfix(infix))
-# for temp in inputList:   
-#     print(temp)
+#def createNFA(postfix)
+#Main
+infix = input("Enter expression: ")
+print(infix)
+postfix = convertToPostfix(infix)
+print("PostFix: " + postfix)
