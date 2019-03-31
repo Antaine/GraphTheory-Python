@@ -14,3 +14,6 @@ I was able to find this by researching on these sites - http://blog.lerner.co.il
                                                       - https://docs.python.org/3/library/collections.html#collections.deque
 App can now correctly identify if strings meet requirements.
 App takes Usaer Input
+https://www.cs.york.ac.uk/fp/lsa/lectures/REToC.pdf
+https://brilliant.org/wiki/shunting-yard-algorithm/
+https://www.w3schools.com/python/python_ref_string.asp
