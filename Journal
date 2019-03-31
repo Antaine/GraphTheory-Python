@@ -12,3 +12,5 @@ Fixed error. Cause was python uses a default constructor method when it can't fi
 the code. The reason this for this was a extra _ in the constructor name leading to python using a default constructor.
 I was able to find this by researching on these sites - http://blog.lerner.co.il/favorite-terrible-python-error-message/
                                                       - https://docs.python.org/3/library/collections.html#collections.deque
+App can now correctly identify if strings meet requirements.
+App takes Usaer Input
