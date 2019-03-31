@@ -1,5 +1,4 @@
 #Antaine Ó Conghaile - G00347577 
-
 #Variables
 specialChars = {'*','.','|'}
 #State
@@ -16,9 +15,12 @@ class nfa:
     def __init__(self, initial, accept):
         self.initial = initial
         self.accept = accept
-
+        
 #Shunt
 def convertToPostfix(infix):
+    """ Takes in a string(infix expression) and converts it into a postfix expression
+    by passing it through a for loop and adding and removing from a stack based on the presidence
+    of the special operators otherwise adds the character"""
     #Variables
     stack = ""
     postfix = ""
@@ -56,6 +58,8 @@ def convertToPostfix(infix):
     return postfix
 
 def createNFA(postfix):
+    """ Takes in a postfix value and builds a series of NFA's by combing them Through edges and making
+    new nodes that will lead to accept if it meets the expression or will go somewhere else which will lead to the answer being false"""
     nfaStack = []
     print("Postfix ",postfix)
     #Parse postfix 
@@ -68,11 +72,11 @@ def createNFA(postfix):
 
             #Connect edge between end 
             nfa1.accept.edge1 = nfa2.initial
-#
+
             #Join into one node & add to stack
             newNfa = nfa(nfa1.initial, nfa2.accept)
             nfaStack.append(newNfa)
-#
+
             
         elif c == '|':
             #Pop from top of stack LIFO
@@ -121,6 +125,7 @@ def createNFA(postfix):
     return nfaStack.pop()
 
 def followes(node):
+    """Helps with the match() by storing the nodes where they are relevant with edges to other nodes"""
     #Create empty node and add to Nodes
     nodes = set()
     nodes.add(node)
@@ -137,6 +142,9 @@ def followes(node):
     return nodes
 
 def match(infix, string):
+    """ Takes a Infix and calls converToPostfix() to turn it into postfix notation where it is passed to the createNFA() to generate the NFA's.
+    Then current is set to the initial state and passed through the loop where it checks the string against the the label in the current node
+    and sets the current equal to he next and clears after a run of the for loop"""
     postfix = convertToPostfix(infix)
     nfa = createNFA(postfix)
     #Create empty node
@@ -160,12 +168,16 @@ def match(infix, string):
 
 #Main
 infix = input("Enter expression: ")
+
+string = input("Enter String: ")
+print(match(infix, string))
+
+#Test Code
 #print(infix)
 #postfix = convertToPostfix(infix)
 #print("PostFix: " + postfix)
-string = input("Enter String: ")
-print(match(infix, string))
 #print(createNFA(postfix))
+
 #Test Material
 #infixes = ["a.b.c*", "a.(b|d).c*", "(a.(b|d))*", "a.(b.b)*.c"]
 #testValues = ["","abc", "abbc", "abcc", "abad", "abbbc"]
