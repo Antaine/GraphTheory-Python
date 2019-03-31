@@ -7,3 +7,8 @@ String concationation slower than using char lists.
   Link - https://waymoot.org/home/python_string/
   Covert Code back to lists now that when logic runs smoothly.
 Infix to Postfix Working.
+Ran into typeError nfa() takes no paramters while working on creating the NFA's using Thompson's Construction.
+Fixed error. Cause was python uses a default constructor method when it can't find one that matches and doesn't point out where the error is in
+the code. The reason this for this was a extra _ in the constructor name leading to python using a default constructor.
+I was able to find this by researching on these sites - http://blog.lerner.co.il/favorite-terrible-python-error-message/
+                                                      - https://docs.python.org/3/library/collections.html#collections.deque
